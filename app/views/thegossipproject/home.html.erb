@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+   <html>
+    <head>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+ 
+     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/team">Team</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/contact">Contact</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+     <title>Bienvenue dans the Gossip Project !</title>
+ 
+    </head>
+ 
+   <body>
+  <div>salut, toi</div> 
+    <%= @gossips.each do |gossip| %>
+<div class="row" style="display:inline-flex;">
+  
+    <div class="card" style="width : 100%; height : 100%; margin:5%">
+      <div class="card-body" style="width : 100%; height : 20%;">
+        <h2> <%= gossip.title %> </h2>
+    <p> <%= gossip.user.first_name %> </p>
+    <%= link_to "Se rendre sur la page du gossip", '/gossips/'+gossip.id.to_s %>
+      </div>
+    </div>
+ 
+</div>
+<% end %>
+
+
+
+   </body>
+ 
+  </html>
