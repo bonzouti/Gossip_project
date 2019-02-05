@@ -39,8 +39,8 @@
           <p>Contenu : <%= @mygossip.content %> </p>
           <p> Prénom : <%= @mygossip.user.first_name %> </p>
           <p> Nom : <%= @mygossip.user.last_name %> </p>
-          <p>Date de création : <%= @mygossip.created_at %> </p>
-          <button type="<button class="btn btn-primary"><%= link_to "Plus d'info sur moi", '/author/'+@mygossip.user.id.to_s %></button>
+          <p>Date de création : <%= @mygossip.created_at.strftime("%d-%m-%Y") %> </p>
+          <%= link_to "Plus d'info sur moi", '/author/'+@mygossip.user.id.to_s, type: "button", class: "btn btn-outline-primary" %>
         </div>
       </div>
     </div>

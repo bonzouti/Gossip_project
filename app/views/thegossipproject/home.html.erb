@@ -42,7 +42,7 @@
           <h5 class="card-title">Titre du potin : <%= gossip.title %> </h5>
           <p class=card-text>Prénom : <%= gossip.user.first_name %> </p>
           <p class=card-text>Nom : <%= gossip.user.last_name %> </p>
-         <button type="<button class="btn btn-primary"> <%= link_to "Se rendre sur la page du gossip", '/gossips/'+gossip.id.to_s %></button>
+          <%= link_to "Se rendre sur la page du gossip", '/gossips/'+gossip.id.to_s,type: "button", class: "btn btn-outline-primary" %>
         </div>
 </div>
 <% end %>s
