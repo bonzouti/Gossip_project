@@ -30,20 +30,22 @@
     </head>
  
    <body>
-  <div> <h2 class="text-center text-primary">Bienvenue dans the Gossip Project</h2></div> 
-    <% @gossips.each do |gossip| %>
-<div class="row" style="display:inline-flex;">
-  
-    <div class="card" style="width : 100%; height : 100%; margin:5%">
-      <div class="card-body" style="width : 100%; height : 20%;">
-        <h2> <%= gossip.title %> </h2>
-    <p> <%= gossip.user.first_name %> </p>
-    <%= link_to "Se rendre sur la page du gossip", '/gossips/'+gossip.id.to_s %>
-      </div>
-    </div>
- 
+  <h2 class="text-center text-primary">Bienvenue dans the Gossip Project</h2>
+    
+<div class="row">
+      <% @gossips.each do |gossip| %>
+    <div class="card col-sm-3 text-center" >
+        <div class="card-header">
+          <p>Potin n°<%= gossip.id%></p>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Titre du potin : <%= gossip.title %> </h5>
+          <p class=card-text>Prénom : <%= gossip.user.first_name %> </p>
+          <p class=card-text>Nom : <%= gossip.user.last_name %> </p>
+         <button type="<button class="btn btn-primary"> <%= link_to "Se rendre sur la page du gossip", '/gossips/'+gossip.id.to_s %></button>
+        </div>
 </div>
-<% end %>
+<% end %>s
 
 
 

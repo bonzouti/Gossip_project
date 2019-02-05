@@ -28,19 +28,22 @@
      <title>Titre de la page</title>
     </head>
  
-   <body>
-   <div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title text-primary">Potin</h5>
-    Voici le gossip numéro <%=params[:id]%>
-    <h2> <%= @mygossip.title %> </h2>
-    <p> <%= @mygossip.content %> </p>
-    <p> <%= @mygossip.user.first_name %> </p>
-    <p> <%= @mygossip.user.last_name %> </p>
-    <p> <%= @mygossip.created_at %> </p>
-    <%= link_to "Plus d'info sur moi", '/author/'+@mygossip.user.id.to_s %>
-</div>
-</div>
-   </body>
+  <body>
+   <div class="row">
+      <div class="card col-sm-3 tex-center">
+        <div class="card-header">
+          <h5 class="text-center text-primary">Voici mon gossip n° <%=params[:id]%></h5>
+        </div>     
+        <div class="card-body"> 
+          <h2>Titre : <%= @mygossip.title %> </h2>
+          <p>Contenu : <%= @mygossip.content %> </p>
+          <p> Prénom : <%= @mygossip.user.first_name %> </p>
+          <p> Nom : <%= @mygossip.user.last_name %> </p>
+          <p>Date de création : <%= @mygossip.created_at %> </p>
+          <button type="<button class="btn btn-primary"><%= link_to "Plus d'info sur moi", '/author/'+@mygossip.user.id.to_s %></button>
+        </div>
+      </div>
+    </div>
+  </body>
  
   </html>
