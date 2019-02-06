@@ -1,8 +1,9 @@
 <!DOCTYPE HTML>
    <html>
     <head>
+    <!--Bootstap css-->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
- 
+      <!--Navbar-->
      <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -25,13 +26,13 @@
     </form>
   </div>
 </nav>
-   
- 
     </head>
  
    <body>
-  <h2 class="text-center text-primary">Bienvenue dans the Gossip Project</h2>
-    
+  <h1 class="text-center text-success">Bienvenue <%= params[:first_name]  %> sur notre site de gossip !</h1>
+    <h5 class="text-center text-info"> Voici les différents potins</h5>
+
+
 <div class="row">
       <% @gossips.each do |gossip| %>
     <div class="card col-sm-3 text-center" >
@@ -47,8 +48,7 @@
 </div>
 <% end %>s
 
-
-
-   </body>
- 
-  </html>
+<!--Footer-->
+      <footer class="py-5 bg-dark"></footer>
+  </body>
+</html>

@@ -1,28 +1,31 @@
 class ThegossipprojectController < ApplicationController
   def home
-    @gossips =Gossip.all
-    
+    @gossips = Gossip.all  
   end
 
-  def team
-    
+  def team   
   end
-  def contact
-    
+
+  def contact   
   end
-  def welcome
-   puts "$" * 60
-    puts "Voici le message de l'URL :"
-    puts  params[:first_name] 
-    puts "$" * 60
-    
+
+  def welcome 
   end
+
   def gossip_page
     @mygossip = Gossip.find(params[:id]) 
   end
 
   def author_page
     @myauthor = User.find(params[:id])
-    
   end
-end
+
+  def new
+    @gossip = Gossip.new
+    puts "*" * 60
+    puts "on est dans le new gossip"
+    puts params
+    puts "*" * 60
+  end
+
+end 

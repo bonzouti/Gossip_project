@@ -30,17 +30,16 @@
  
   <body>
    <div class="row">
-      <div class="card col-sm-3 tex-center">
+      <div class="card col-lg-12 tex-center">
         <div class="card-header">
-          <h5 class="text-center text-primary">Voici mon gossip n° <%=params[:id]%></h5>
+          <h5 class="text-center text-primary">Bienvenue sur la page du gossip N° <%=params[:id]%> !</h5>
         </div>     
         <div class="card-body"> 
-          <h2>Titre : <%= @mygossip.title %> </h2>
-          <p>Contenu : <%= @mygossip.content %> </p>
-          <p> Prénom : <%= @mygossip.user.first_name %> </p>
-          <p> Nom : <%= @mygossip.user.last_name %> </p>
-          <p>Date de création : <%= @mygossip.created_at.strftime("%d-%m-%Y") %> </p>
-          <%= link_to "Plus d'info sur moi", '/author/'+@mygossip.user.id.to_s, type: "button", class: "btn btn-outline-primary" %>
+          <h2>Title : <%= @mygossip.title %> </h2>
+          <p>Author : <%= @mygossip.user.first_name %> <%= @mygossip.user.last_name %> </p>
+          <%= link_to "More info", '/author/'+@mygossip.user.id.to_s, type: "button", class: "btn btn-outline-primary" %>
+          <p>Content: <%= @mygossip.content %> </p>
+          <p>Creation date : <%= @mygossip.created_at.strftime("%d-%m-%Y") %> </p>
         </div>
       </div>
     </div>

@@ -29,16 +29,30 @@
     </head>
  
    <body>
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-  <h5 class="card-title text-primary">Qui suis-je ?</h5>
-    <p> Nom : <%= @myauthor.first_name %> </p>
-    <p> Prénom : <%= @myauthor.last_name %> </p>
-    <p> Age : <%= @myauthor.age %> </p>
-    <p> Email : <%= @myauthor.email %> </p>
-    <p> Description : <%= @myauthor.description %> </p> 
-    </div>
-</div>
-   </body>
- 
+   <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Age</th>
+          <th scope="col">Email</th>
+          <th scope="col">Description</th>
+          <th scope="col">cretion Date</th>
+        </tr>
+      </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td><%= @myauthor.first_name %></td>
+            <td><%= @myauthor.last_name %></td>
+            <td><%= @myauthor.age %></td>
+            <td><%= @myauthor.email %></td>
+            <td><%= @myauthor.description %></td>
+            <td><%= @myauthor.created_at.strftime("%d-%m-%Y") %></td>
+        
+          </tr>
+        </tbody>
+    </table>
   </html>
+   </body>

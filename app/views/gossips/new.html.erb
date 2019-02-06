@@ -1,0 +1,22 @@
+
+ <%= form_tag url_for(action: 'create'), method: "post" do %>
+
+      <%= label_tag 'title' %>
+      <%= text_field_tag 'title' %>
+      <br /> <br />
+
+      <%= label_tag 'content', nil, rows: 10, cols: 25 %>
+      <%= text_area_tag 'content' %>
+      <br /> <br />
+
+      <%= submit_tag "Create gossip" %>
+    <% end %>
+
+    <div>
+  <% flash.each do |key, value| %>
+    <div>
+      <a href="#" data-dismiss="alert">×</a>
+        <%= value %>
+    </div>
+  <% end %>
+</div>
