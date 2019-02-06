@@ -1,0 +1,18 @@
+
+<div class="jumbotron">
+  <h4 class="display-4">Edit your potin <%= @gossip.id%></h4>
+    <%= form_for @gossip do |f| %>
+    <div class="form-group">
+      <label>Title</label></br>
+        <%= f.text_field :title, class: 'form-control' %></br></br>
+    </div>
+    <div class='form-group'>
+            <label>Content</label></br>
+            <%= f.text_area :content, class: 'form-control' %></br>
+        </div>
+        <div class='form-group'>
+            <button type="submit" class="btn btn-primary">Sauvegarder les modifs du gossip</button>
+        </div>
+    <% end %>
+
+</div>

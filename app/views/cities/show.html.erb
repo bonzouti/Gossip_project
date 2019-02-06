@@ -1,0 +1,20 @@
+
+
+<div class="jumbotron">
+  <h4 class="display-4"><%= @cities.name%></h4>
+  <p class="lead"><strong>City : </strong></br><%= @cities.name %></p>
+</div>
+
+
+<div class="jumbotron">
+<h4 class="display-4">Les gossips de la ville</h4></br>
+  <ul class="list-group">
+      <% @cities.user.each do |user| %>
+        <% user.gossips.each do |gossip| %>
+<div class="card border-secondary bg-light mb-5 p-2">
+            <p class="lead"><strong>Title : </strong></br><%= gossip[:title] %></br>
+            <p class="lead"><strong>Content : </strong></br><%= gossip[:content] %>
+</div>
+        <% end %>
+      <% end %>
+  </ul>

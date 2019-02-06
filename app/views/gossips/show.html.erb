@@ -1,0 +1,28 @@
+<html>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+  <body>
+  <!--destroy potin-->
+  <div>
+  <%= link_to gossip_path(@gossips) do %>
+      <a href="<%=gossip_path(@gossips) %>"class="btn btn-danger" data-confirm="Alors, tu n'assume pas ce gossip, tu veux le delete ? " data-method="DELETE"> Supprimer ce gossip</a>
+      <% end %>
+</div>
+
+
+    <div class="row">
+      <div class="card col-lg-12 tex-center">
+        <div class="card-header">
+          <h5 class="text-center text-primary">Bienvenue sur la page du gossip N° <%=params[:id]%> !</h5>
+        </div>     
+        <div class="card-body"> 
+          <h2>Title : <%= @gossips.title %> </h2>
+          <p>Author : <%= @gossips.user.first_name %> <%= @gossips.user.last_name %> </p>
+          <%= link_to "More info",user_path(@gossips.user.id.to_s), type: "button", class: "btn btn-outline-primary" %>
+          <p>Content: <%= @gossips.content %> </p>
+          <p>Creation date : <%= @gossips.created_at.strftime("%d-%m-%Y") %> </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

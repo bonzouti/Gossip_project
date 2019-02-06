@@ -1,22 +1,22 @@
+<!DOCTYPE HTML>
+   <html>
+          <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
- <%= form_tag url_for(action: 'create'), method: "post" do %>
+    <body>
+         <%= form_tag url_for(action: 'create'), method: "post" do %>
 
-      <%= label_tag 'title' %>
-      <%= text_field_tag 'title' %>
+      <%= label_tag 'Title' %>
+      <%= text_field_tag 'title', @gossip.title, :class => "form-control", placeholder: "Title"%> <br /> <br />
+      <br/>Alors, ça veut bitcher sur qui et sur quoi? <br/>
+
+
+      <%= label_tag 'Content' %>
+      <%= text_area_tag 'content',@gossip.content, :class => "form-control", placeholder: "Content"%>
       <br /> <br />
 
-      <%= label_tag 'content', nil, rows: 10, cols: 25 %>
-      <%= text_area_tag 'content' %>
-      <br /> <br />
+      <%= submit_tag "Create Post" %>
 
-      <%= submit_tag "Create gossip" %>
     <% end %>
 
-    <div>
-  <% flash.each do |key, value| %>
-    <div>
-      <a href="#" data-dismiss="alert">×</a>
-        <%= value %>
-    </div>
-  <% end %>
-</div>
+      </body>
+  </html>
