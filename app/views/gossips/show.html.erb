@@ -10,12 +10,15 @@
 </div>
 
 
-    <div class="row">
-      <div class="card col-lg-12 tex-center">
+
+  <div class="container">
+    <div class="col">
+      <div class="card col tex-center">
         <div class="card-header">
-          <h5 class="text-center text-primary">Bienvenue sur la page du gossip N° <%=params[:id]%> !</h5>
-        </div>     
-        <div class="card-body"> 
+          <h5 class="text-center text-primary alert alert-primary">Bienvenue sur la page du gossip N° <%=params[:id]%> !</h5>
+        </div>  
+        
+        <div class="card-body alert alert-primary shadow-lg p-4 mb-4 "> 
           <h2>Title : <%= @gossips.title %> </h2>
           <p>Author : <%= @gossips.user.first_name %> <%= @gossips.user.last_name %> </p>
           <%= link_to "More info",user_path(@gossips.user.id.to_s), type: "button", class: "btn btn-outline-primary" %>
@@ -23,6 +26,8 @@
           <p>Creation date : <%= @gossips.created_at.strftime("%d-%m-%Y") %> </p>
         </div>
       </div>
+      
     </div>
+  </div>
   </body>
 </html>

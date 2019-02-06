@@ -8,24 +8,22 @@
   <h1 class="text-center text-success">Bienvenue <%= params[:first_name]  %> sur notre site de gossip !</h1>
     <h5 class="text-center text-info"> Voici les différents potins</h5>
 				<!--button gossip create-->
- <p class="btn btn btn-success"><%= link_to "Create a new Gossip", new_gossip_path %> </p>
+ <p class="btn btn-shadow p-8 mb-4 bg-info  "><%= link_to "Create a new Gossip", new_gossip_path %> </p>
+ 
 
 <div class="row">
       <% @gossips.each do |gossip| %>
-    <div class="card col-sm-3 text-center" >
+    <div class="card col-sm-3 text-center mr-3)" >
         <div class="card-header">
-          <p>Potin n°<%= gossip.id%></p>
+          <p class="alert alert-primary">Potin n°<%= gossip.id%></p>
         </div>
-        <div class="card-body">
+        <div class="card-body shadow-lg p-4 mb-4 alert alert-primary">
           <h5 class="card-title">Titre du potin : <%= gossip.title %> </h5>
           <p class=card-text>Prénom : <%= gossip.user.first_name %> </p>
           <p class=card-text>Nom : <%= gossip.user.last_name %> </p>
           <%= link_to "Se rendre sur la page du gossip", '/gossips/'+gossip.id.to_s,type: "button", class: "btn btn-outline-primary" %>
         </div>
 </div>
-<% end %>s
-
-<!--Footer-->
-      <footer class="py-5 bg-dark"></footer>
+<% end %>
   </body>
 </html>
